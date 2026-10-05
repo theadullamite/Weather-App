@@ -1,14 +1,12 @@
-import React from "react"
+import VideoBackground from "../../public/Background"
+
 
 const WeatherCard = ({ weather }) => {
     return (
         <div className="mt-6">
            <h2 className="text-2xl font-semibold text-center">{weather.name}, {weather.sys.country}</h2>
            <div className="flex justify-center items-center mt-4">
-            <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} 
-            alt={weather.weather[0].description}
-            className="w-16 h-16"
-            />
+            <VideoBackground />
             <p className="text-4xl font-bold">{Math.round(weather.main.temp)}</p>
             <p className="text-center text-gray-400 capitalize">{weather.weather[0].description}</p>
            </div>

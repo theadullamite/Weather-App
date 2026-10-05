@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import axios from "axios";
-import WeatherCard from './components/WeatherCard'
+import WeatherCard from './components/WeatherCard';
 //import video from './src/video.mp4'
 //import video from "./src/video.mp4"
 
