@@ -2,7 +2,7 @@ import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import axios from "axios";
 import WeatherCard from "./components/WeatherCard";
-import VideoBackground from "../public/Background";
+import VideoBackground from "./components/Background";
 
 function App() {
   //import api from .env
@@ -24,7 +24,7 @@ function App() {
       const url = `${apiUrl}?q=${city}&units=metric&appid=${apiKey}`;
       const response = await axios.get(url);
       console.log(response.data);
-      //pass setWeather with response.data
+      //parse setWeather with response.data
       setWeather(response.data);
     } catch (error) {
       if (error.response && error.response.status === 404) {
@@ -39,19 +39,22 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-violet-100 relative overflow-hidden">
-      <VideoBackground />
-      <div className="bg-black/70 text-white rounded-lg p-8 shadow-lg max-w-md w-full z-10">
-        <h1 className="text-3xl font-bold text-center mb-6">Weather App</h1>
-        <SearchBar fetchWeather={fetchWeather} />
-        {/* check if loading is true */}
-        {loading && <p className="text-center mt-6">Loading...</p>}
-        {/* check the error state */}
-        {error && <p className="text-red-500 text-center mt-4">{error}</p>}
-        {/* check the weather state and pass weather as prop into the weather component */}
-        {weather && <WeatherCard weather={weather} />}
+    <>
+      
+      <div className="min-h-screen flex flex-col items-center justify-center bg-violet-100 relative overflow-hidden">
+        <VideoBackground />
+        <div className="bg-black/70 text-white rounded-lg p-8 shadow-lg max-w-md w-full z-10">
+          <h1 className="text-3xl font-bold text-center mb-6">Weather App</h1>
+          <SearchBar fetchWeather={fetchWeather} />
+          {/* check if loading is true */}
+          {loading && <p className="text-center mt-6">Loading...</p>}
+          {/* check the error state */}
+          {error && <p className="text-red-500 text-center mt-4">{error}</p>}
+          {/* check the weather state and pass weather as prop into the weather component */}
+          {weather && <WeatherCard weather={weather} />}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
