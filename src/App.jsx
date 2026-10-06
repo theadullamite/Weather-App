@@ -3,16 +3,12 @@ import SearchBar from "./components/SearchBar";
 import axios from "axios";
 import WeatherCard from "./components/WeatherCard";
 import VideoBackground from "../public/Background";
-//import video from './src/video.mp4'
-//import video from "./src/video.mp4"
 
 function App() {
   //import api from .env
   const apiKey = import.meta.env.VITE_API_KEY;
   const apiUrl = import.meta.env.VITE_API_URL;
-  //create state for the weather input and set to null
-  //create state for loading the api and set to false
-  //an error state to check for any error and set to an empty string
+ 
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
