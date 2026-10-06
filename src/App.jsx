@@ -8,13 +8,10 @@ function App() {
   //import api from .env
   const apiKey = import.meta.env.VITE_API_KEY;
   const apiUrl = import.meta.env.VITE_API_URL;
- 
+
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
-  //const API_KEY = import.meta.env.VITE_API_KEY;
-  //create variables for your API KEY and API URL
 
   //create an async fetchweather function with city as a parameter and import axios to fetch your api....pass the function as a prop into the SearchBar Component
   //set setLoading as true, and setError as empty
@@ -30,11 +27,6 @@ function App() {
       //pass setWeather with response.data
       setWeather(response.data);
     } catch (error) {
-      //in the catch statement, check if error.response and its status = 404
-      //then set the setError to "City not found. Please try again later"
-      //else, setError to "An error ocurred. Please try again later"
-      //then outside the if else statement, setWeather to null
-      //and finally, setLoading to false
       if (error.response && error.response.status === 404) {
         setError("City not found. Please try again later.");
       } else {
