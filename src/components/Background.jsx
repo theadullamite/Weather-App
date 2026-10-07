@@ -2,13 +2,13 @@ function VideoBackground() {
   return (
     <video
       autoPlay
-      loop
       muted
+      loop
       playsInline
-      className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+      className="relative top-0 left-0 w-full h-full object-cover -z-10"
     >
       <source
-        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        src="/VID-20261007-WA0000.mp4"
         type="video/mp4"
       />
     </video>

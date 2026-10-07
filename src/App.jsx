@@ -39,10 +39,9 @@ function App() {
   };
 
   return (
-    <>
-      
+    <div className="relative w-full h-screen overflow-hidden">
+      <VideoBackground />
       <div className="min-h-screen flex flex-col items-center justify-center bg-violet-100 relative overflow-hidden">
-        <VideoBackground />
         <div className="bg-black/70 text-white rounded-lg p-8 shadow-lg max-w-md w-full z-10">
           <h1 className="text-3xl font-bold text-center mb-6">Weather App</h1>
           <SearchBar fetchWeather={fetchWeather} />
@@ -54,9 +53,8 @@ function App() {
           {weather && <WeatherCard weather={weather} />}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
 export default App;
-
