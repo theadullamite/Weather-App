@@ -13,8 +13,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  //create an async fetchweather function with city as a parameter and import axios to fetch your api....pass the function as a prop into the SearchBar Component
-  //set setLoading as true, and setError as empty
   const fetchWeather = async (city) => {
     setLoading(true);
     setError("");
