@@ -1,13 +1,11 @@
 import { useState } from "react";
 
-//access the fechWeather function as the SearchBar parameter,dont forget the curly braces
 function SearchBar({ fetchWeather }) {
   const [city, setCity] = useState("");
 
-  const handleSubmit = (e) => {
-    //prevent the default of the button
-    e.preventDefault();
-    //check if fetchWeather is city, then setCity is empty...trim the city
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
     if (city.trim()) {
       fetchWeather(city);
       setCity("");

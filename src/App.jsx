@@ -21,7 +21,6 @@ function App() {
     try {
       const url = `${apiUrl}?q=${city}&units=metric&appid=${apiKey}`;
       const response = await axios.get(url);
-      console.log(response.data);
       //parse setWeather with response.data
       setWeather(response.data);
     } catch (error) {
