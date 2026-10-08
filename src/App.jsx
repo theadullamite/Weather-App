@@ -5,7 +5,6 @@ import WeatherCard from "./components/WeatherCard";
 import VideoBackground from "./components/VideoBackground";
 
 function App() {
-  //import api from .env
   const apiKey = import.meta.env.VITE_API_KEY;
   const apiUrl = import.meta.env.VITE_API_URL;
 
