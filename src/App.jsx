@@ -16,7 +16,6 @@ function App() {
     setLoading(true);
     setError("");
 
-    //use try and catch error handlers to fetch your url
     try {
       const url = `${apiUrl}?q=${city}&units=metric&appid=${apiKey}`;
       const response = await axios.get(url);
